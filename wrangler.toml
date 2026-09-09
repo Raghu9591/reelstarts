@@ -1,0 +1,5 @@
+name = "wispy-glade-1dcc"
+compatibility_date = "2026-09-03"
+
+[assets]
+directory = "."
