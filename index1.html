@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rapido City Stars — FREERIDE. Get ₹1000.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --yellow:#F7CA45;
+    --ink:#15120C;
+    --cream:#FFF8EA;
+    --asphalt:#1B2E52;
+    --navy:#284676;
+    --signal:#E8432F;
+    --go:#1E8A57;
+    --line: rgba(21,18,12,0.12);
+    --line-light: rgba(255,255,255,0.18);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--navy);color:var(--cream);font-family:'Space Grotesk',sans-serif;}
+  h1,h2,h3{font-family:'Archivo Black',sans-serif;font-weight:400;margin:0;line-height:1.05;text-transform:uppercase;letter-spacing:-0.01em;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;padding:14px 26px;border-radius:100px;border:2px solid var(--navy);background:var(--yellow);color:var(--ink);cursor:pointer;text-decoration:none;}
+  .btn:hover{background:var(--cream);color:var(--navy);}
+
+  /* Banner Card Style */
+  .campaign-banner {
+    max-width: 760px;
+    margin: 40px auto 0;
+    padding: 0 24px;
+  }
+  .campaign-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  }
+
+  /* Hero Section Copy */
+  .hero {
+    background: var(--navy);
+    color: #FFFFFF;
+    padding: 32px 0 60px;
+    text-align: center;
+  }
+  .hero-grid {
+    display: flex;
+    justify-content: center;
+  }
+  .hero h1 {
+    font-size: 48px;
+    color: #FFFFFF;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+  .hero h1 span {
+    color: var(--yellow);
+  }
+  .hero p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+    margin: 18px auto 0;
+  }
+
+  /* City Reel Section */
+  .city-section{background:var(--cream);color:var(--ink);padding:64px 0;border-bottom:1px solid var(--line);}
+  .city-head{max-width:560px;margin:0 auto 28px;text-align:center;}
+  .city-head h2{font-size:26px;}
+  .city-download{display:flex;gap:32px;align-items:center;justify-content:center;background:#fff;border:1.5px solid var(--navy);border-radius:20px;padding:28px;max-width:760px;margin:0 auto;}
+  .city-download-info p{font-size:14px;color:rgba(21,18,12,0.65);margin:0 0 18px;max-width:420px;line-height:1.5;}
+
+  .sample-frame{width:200px;flex-shrink:0;}
+  .sample-video{width:100%;aspect-ratio:9/16;border-radius:16px;display:block;background:#000;object-fit:cover;}
+
+  /* Steps Section */
+  .steps-section{background:var(--asphalt);color:var(--cream);padding:64px 0;}
+  .steps-head{max-width:520px;margin-bottom:36px;}
+  .steps-head h2{font-size:28px;color:var(--cream);}
+  .steps-head p{color:rgba(255,248,234,0.65);margin-top:10px;font-size:15px;}
+  .steps-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .step{border:1px solid var(--line-light);border-radius:14px;padding:20px 18px;background:rgba(255,248,234,0.03);}
+  .step .num{font-family:'JetBrains Mono',monospace;color:var(--yellow);font-size:13px;}
+  .step h3{font-size:16px;text-transform:none;font-family:'Space Grotesk',sans-serif;font-weight:700;margin:10px 0 8px;}
+  .step p{font-size:13.5px;color:rgba(255,248,234,0.65);margin:0;line-height:1.5;}
+
+  /* Form Section */
+  .apply-section{padding:72px 0;background:var(--cream);color:var(--ink);}
+  .apply-card{background:#fff;border:1.5px solid var(--navy);border-radius:20px;padding:36px;max-width:640px;margin:0 auto;}
+  .apply-card h2{font-size:26px;margin-bottom:6px;}
+  .apply-card>p{font-size:14px;color:rgba(21,18,12,0.6);margin:0 0 26px;}
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px;}
+  .field input{width:100%;padding:12px 14px;border-radius:9px;border:1.5px solid var(--line);font-family:'Space Grotesk',sans-serif;font-size:14.5px;background:var(--cream);}
+  .field input:focus{outline:none;border-color:var(--navy);}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .check-row{display:flex;align-items:flex-start;gap:10px;margin:20px 0 24px;}
+  .check-row input{margin-top:3px;}
+  .check-row label{font-size:13.5px;color:rgba(21,18,12,0.75);}
+  .error-msg{font-size:12.5px;color:var(--signal);margin-top:10px;display:none;}
+  .submit-btn{width:100%;justify-content:center;padding:15px;font-size:15px;}
+  .success-view{display:none;text-align:center;}
+  .success-view .ref{font-family:'JetBrains Mono',monospace;font-size:20px;background:var(--yellow);display:inline-block;padding:8px 18px;border-radius:8px;margin:12px 0 16px;}
+  .success-view p{font-size:14px;color:rgba(21,18,12,0.65);max-width:440px;margin:0 auto;}
+
+  footer{background:var(--navy);color:rgba(255,248,234,0.5);padding:28px 24px;font-size:12.5px;text-align:center;}
+  footer .note{max-width:600px;margin:0 auto;line-height:1.6;}
+
+  @media(max-width:760px){
+    .wrap{padding:0 16px;}
+    .campaign-banner{padding:20px 16px 0;}
+    .campaign-banner img{border-radius:14px;}
+    .hero h1{font-size:32px;}
+    .hero p{font-size:14.5px;}
+    .city-section{padding:44px 0;}
+    .city-head h2{font-size:22px;}
+    .city-download{flex-direction:column;padding:20px 16px;gap:20px;text-align:center;}
+    .city-download-info p{max-width:none;}
+    .city-download-info .btn{width:100%;justify-content:center;}
+    .sample-frame{width:min(200px,70vw);}
+    .steps-section{padding:44px 0;}
+    .steps-head h2{font-size:22px;}
+    .steps-row{grid-template-columns:1fr;}
+    .field-row{grid-template-columns:1fr;}
+    .apply-section{padding:44px 0;}
+    .apply-card{padding:22px 16px;}
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <!-- Card Header Banner -->
+  <div class="campaign-banner">
+    <img src="https://d1qu3jpdhlfovf.cloudfront.net/1469694336/assets/0d09857562254f04a46a2e74b90a127b.png" alt="Rapido City Stars">
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>DOWNLOAD A REEL.<br><span>WIN RS. 1,000.</span></h1>
+        <p>
+          Rapido just landed in your city — and we want YOU to break the news.
+          Download the official FREERIDE reel for your city, post it on your public Instagram,
+          and once it crosses 1,000 views we credit ₹1,000 to your wallet.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic Reel Section -->
+  <section class="city-section">
+    <div class="wrap">
+      <div class="city-head">
+        <h2>Download the Reel below</h2>
+      </div>
+      
+      <div class="city-download">
+        <div class="sample-frame">
+          <video id="cityVideo" class="sample-video" controls playsinline preload="auto" crossorigin="anonymous">
+            <source id="cityVideoSource" src="" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="city-download-info">
+          <p>Download this video and share it on instagram and submit your link below</p>
+          <a id="downloadBtn" href="#" class="btn" target="_blank" download>Download Video</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section class="steps-section">
+    <div class="wrap">
+      <div class="steps-head">
+        <h2>How It Works</h2>
+        <p>Follow these simple steps to claim your reward.</p>
+      </div>
+      <div class="steps-row">
+        <div class="step">
+          <span class="num">01</span>
+          <h3>Download the Reel</h3>
+          <p>Get the video template loaded for your city from the section above.</p>
+        </div>
+        <div class="step">
+          <span class="num">02</span>
+          <h3>Post on Instagram</h3>
+          <p>Upload the reel on your Instagram profile and tag the required handles/hashtags.</p>
+        </div>
+        <div class="step">
+          <span class="num">03</span>
+          <h3>Submit Details</h3>
+          <p>Fill out the application form below with your reel link and details to receive ₹1000.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Submission Form -->
+  <section class="apply-section">
+    <div class="wrap">
+      <div class="apply-card">
+        <h2>Submit Your Entry</h2>
+        <p>Fill in the required information after posting your reel on Instagram.</p>
+        
+        <form id="entryForm">
+          <div class="field">
+            <label for="fullName">Full Name *</label>
+            <input type="text" id="fullName" required placeholder="Enter your full name">
+          </div>
+          
+          <div class="field-row">
+            <div class="field">
+              <label for="phoneNumber">Phone Number *</label>
+              <input type="tel" id="phoneNumber" required placeholder="10-digit mobile number">
+            </div>
+            <div class="field">
+              <label for="instaHandle">Instagram Handle *</label>
+              <input type="text" id="instaHandle" required placeholder="@yourhandle">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="reelLink">Reel Link *</label>
+            <input type="url" id="reelLink" required placeholder="https://www.instagram.com/reel/...">
+          </div>
+
+          <div class="check-row">
+            <input type="checkbox" id="terms" required>
+            <label for="terms">I agree to the Terms &amp; Conditions and confirm that the submitted content meets all campaign guidelines.</label>
+          </div>
+
+          <div id="errorMsg" class="error-msg">Please fill in all required fields properly.</div>
+
+          <button type="submit" class="btn submit-btn">Submit Entry</button>
+        </form>
+
+        <div id="successView" class="success-view">
+          <h3>Submission Successful!</h3>
+          <p>Your entry has been recorded. Your reference code is:</p>
+          <div id="refCode" class="ref">RCS-000000</div>
+          <p>Keep this code safe for tracking your reward status.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="note">Rapido City Stars Campaign. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Direct Archive.org hosted video files mapping
+  const cityReels = {
+    'bangalore': 'https://archive.org/download/rapido_tenkasi_7s_v1/rapido_bengaluru_7s_v1.mp4',
+    'bengaluru': 'https://archive.org/download/rapido_tenkasi_7s_v1/rapido_bengaluru_7s_v1.mp4',
+    'changanassery': 'https://archive.org/download/rapido_tenkasi_7s_v1/rapido_changanassery_7s_v1.mp4',
+    'chavakkad': 'https://archive.org/download/rapido_tenkasi_7s_v1/rapido_chavakkad_7s_v1.mp4',
+    'gangapurcity': 'https://archive.org/download/rapido_tenkasi_7s_v1/rapido_gangapur_city_7s_v1.mp4',
+    'jalore': 'https://archive.org/download/rapido_tenkasi_7s_v1/rapido_jalore_7s_v1.mp4',
+    'kollam': 'https://archive.org/download/rapido_tenkasi_7s_v1/rapido_kollam_7s_v1.mp4',
+    'krishnagiri': 'https://archive.org/download/rapido_tenkasi_7s_v1/rapido_krishnagiri_7s_v1.mp4',
+    'lakhisarai': 'https://archive.org/download/rapido_tenkasi_7s_v1/rapido_lakhisarai_7s_v1.mp4',
+    'lumding': 'https://archive.org/download/rapido_tenkasi_7s_v1/rapido_lumding_7s_v1.mp4',
+    'masaurhi': 'https://archive.org/download/rapido_tenkasi_7s_v1/rapido_masaurhi_7s_v1.mp4',
+    'nagina': 'https://archive.org/download/rapido_tenkasi_7s_v1/rapido_nagina_7s_v1.mp4',
+    'ponnur': 'https://archive.org/download/rapido_tenkasi_7s_v1/rapido_ponnur_7s_v1.mp4',
+    'tenkasi': 'https://archive.org/download/rapido_tenkasi_7s_v1/rapido_tenkasi_7s_v1.mp4',
+    'default': 'https://archive.org/download/rapido_tenkasi_7s_v1/rapido_bengaluru_7s_v1.mp4'
+  };
+
+  function getCityFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    let city = urlParams.get('city');
+
+    if (!city) return 'bangalore';
+
+    // Normalizes input string (lowercases & strips whitespace/special chars)
+    city = decodeURIComponent(city).toLowerCase().replace(/[^a-z0-9]/g, '').trim();
+
+    if (city === '' || city === 'null' || city.includes('@') || city.includes('{')) {
+      return 'bangalore';
+    }
+
+    return city;
+  }
+
+  function setupCityReel() {
+    const city = getCityFromURL();
+    const videoSrc = cityReels[city] || cityReels['default'];
+    
+    const videoElement = document.getElementById('cityVideo');
+    const videoSource = document.getElementById('cityVideoSource');
+    const downloadBtn = document.getElementById('downloadBtn');
+
+    if (videoSource && videoElement) {
+      videoSource.src = videoSrc;
+      videoElement.load();
+    }
+
+    if (downloadBtn) {
+      downloadBtn.href = videoSrc;
+      downloadBtn.setAttribute('download', `${city}-rapido-reel.mp4`);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setupCityReel();
+
+    const form = document.getElementById('entryForm');
+    const successView = document.getElementById('successView');
+    const refCodeElement = document.getElementById('refCode');
+    const errorMsg = document.getElementById('errorMsg');
+
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        errorMsg.style.display = 'none';
+
+        const fullName = document.getElementById('fullName').value.trim();
+        const phoneNumber = document.getElementById('phoneNumber').value.trim();
+        const instaHandle = document.getElementById('instaHandle').value.trim();
+        const reelLink = document.getElementById('reelLink').value.trim();
+        const terms = document.getElementById('terms').checked;
+
+        if (!fullName || !phoneNumber || !instaHandle || !reelLink || !terms) {
+          errorMsg.style.display = 'block';
+          return;
+        }
+
+        const randomRef = 'RCS-' + Math.floor(100000 + Math.random() * 900000);
+        refCodeElement.textContent = randomRef;
+
+        form.style.display = 'none';
+        successView.style.display = 'block';
+      });
+    }
+  });
+</script>
+</body>
+</html>
